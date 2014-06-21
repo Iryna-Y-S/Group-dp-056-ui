@@ -1,0 +1,30 @@
+﻿div {
+    border: 2px solid grey;
+    width: 330px;
+    text-align: center;
+    padding-left:10px;
+    background-color: #eeeeee;
+}
+
+ul {
+    position: relative;
+    padding:5px;
+    font-size: 24px;
+    margin:auto;
+    background-color: #eeeeee;
+}
+
+li {
+    background-color:white;
+    margin: 6px;
+	padding: 6px;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 1;
+    color: #555555;
+    text-align: left;
+    border-radius: 2px;
+	width:300px;
+	border: 1px solid grey;
+}
+ 
