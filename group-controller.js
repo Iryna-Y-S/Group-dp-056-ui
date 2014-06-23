@@ -1,6 +1,6 @@
 function GroupController () {
-
     var group = new Group(),
+	
         div_element = document.getElementById("common"),
         ul_element = document.createElement("ul");
     
@@ -37,12 +37,12 @@ function GroupController () {
 		    person_controller[i] = new PersonController(students[i]);
 			
             li_element = document.createElement("li");
-            li_element.innerHTML = person_controller[i].toHTML();
+            li_element.innerHTML = person_controller[i].toString();
             ul_element.appendChild(li_element);
         }
+		
         div_element.appendChild(ul_element);
-   
-}
+    }
 
 	return this;
 }

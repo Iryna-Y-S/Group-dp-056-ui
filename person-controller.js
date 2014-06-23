@@ -1,11 +1,13 @@
 function PersonController (person) {
 	
-    this.toHTML = function () {
+    this.toString = function () {
 	    var li_elem = "", 
 		    key;
-			for (key in person.getAttributes())
+			
+		for (key in person.getAttributes()) {
 	        li_elem += person.getAttributes()[key] + " ";
-	    		
+	    }
+		
         return li_elem;
     };
 	
