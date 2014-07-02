@@ -1,5 +1,3 @@
-window.addEventListener("load", createGroup, false);
-
-function createGroup() {
+$(function () {
     var group_controller = new GroupController();
-}
+});

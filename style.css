@@ -10,8 +10,9 @@ ul {
     position: relative;
     padding:5px;
     font-size: 24px;
-    margin:auto;
+    margin:0 auto;
     background-color: #eeeeee;
+	display: inline-block;
 }
 
 li {

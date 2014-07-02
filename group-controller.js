@@ -1,8 +1,6 @@
 function GroupController () {
-    var group = new Group(),
-	
-        div_element = document.getElementById("common"),
-        ul_element = document.createElement("ul");
+
+    var group = new Group();
     
     studentsInitialization();
     
@@ -28,20 +26,18 @@ function GroupController () {
 	 
     function showStudents(students) {
         var person_controller = [],
-		    i = 0,
-            li_element;
+		    div_el = $("#common"),
+			ul_el = $(".list"),
+		    group_name = "Group Dp-056-UI",
+			li_el = [],
+		    i = 0;
 			
-        div_element.innerHTML = "Group Dp-056-UI";
+        div_el.text(group_name);
 		
         for (i = 0; i < students.length; i++) {
 		    person_controller[i] = new PersonController(students[i]);
-			
-            li_element = document.createElement("li");
-            li_element.innerHTML = person_controller[i].toString();
-            ul_element.appendChild(li_element);
-        }
-		
-        div_element.appendChild(ul_element);
+			ul_el.append("<li>"+person_controller[i].toString()+"</li>");  
+        }       
     }
 
 	return this;
