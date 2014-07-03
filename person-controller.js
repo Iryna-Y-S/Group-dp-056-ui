@@ -1,15 +1,19 @@
 function PersonController (person) {
 	
     this.toString = function () {
-	    var li_elem = "", 
-		    key;
+	    var person_info,
+		    li_elem,
+		    string = "",
+		    i;
 			
-		for (key in person.getAttributes()) {
-	        li_elem += person.getAttributes()[key] + " ";
-	    }
+	    $.each(person.getAttributes(), function(i, person_info){
+		    string += person_info + " ";
+		});
 		
-        return li_elem;
-    };
+		li_elem = "<li>" + string + "</li>";
 	
+		return li_elem;	
+	};		
+			
     return this;
 }

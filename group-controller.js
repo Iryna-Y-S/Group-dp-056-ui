@@ -2,9 +2,9 @@ function GroupController () {
 
     var group = new Group();
     
-    studentsInitialization();
+    studentsInit();
     
-	function studentsInitialization () {
+	function studentsInit () {
 		var aleks = new Person(),
 	        anton = new Person(),
 		    illya = new Person(), 
@@ -25,20 +25,19 @@ function GroupController () {
 	} 	
 	 
     function showStudents(students) {
-        var person_controller = [],
-		    div_el = $("#common"),
-			ul_el = $(".list"),
-		    group_name = "Group Dp-056-UI",
-			li_el = [],
+	
+	    var $el = $(".list"),   
+		    person_controller,
+			person,
 		    i = 0;
-			
-        div_el.text(group_name);
+	
+		$.each(students, function(i, person){
 		
-        for (i = 0; i < students.length; i++) {
-		    person_controller[i] = new PersonController(students[i]);
-			ul_el.append("<li>"+person_controller[i].toString()+"</li>");  
-        }       
-    }
+		    person_controller = new PersonController(person),
+			
+		    $el.append(person_controller.toString()); 	
+		});	
+	}
 
 	return this;
 }
