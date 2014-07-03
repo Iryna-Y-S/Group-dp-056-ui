@@ -26,14 +26,13 @@ function GroupController () {
 	 
     function showStudents(students) {
 	
-	    var $el = $(".list"),   
-		    person_controller,
-			person,
-		    i = 0;
+	    var $el = $(".list");
 	
-		$.each(students, function(i, person){
+		$.each(students, function(i, el){
 		
-		    person_controller = new PersonController(person),
+		    var  person_controller;
+			
+		    person_controller = new PersonController(el),
 			
 		    $el.append(person_controller.toString()); 	
 		});	
