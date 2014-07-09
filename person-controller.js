@@ -1,17 +1,8 @@
-function PersonController (person) {
-	
-    this.toString = function () {
-	    var li_elem,
-		    string = "";
-			
-	    $.each(person.getAttributes(), function(i, person_info){
-		    string += person_info + " ";
-		});
-		
-		li_elem = "<li>" + string + "</li>";
-	
-		return li_elem;	
-	};		
-			
-    return this;
-}
+var PersonController = Backbone.View.extend({
+
+	template: _.template("<li><%= name %> <%= gender %> <%= skype %> </li>"),
+
+    render: function () {
+	    return this.template(this.model.toJSON());
+	}	
+});

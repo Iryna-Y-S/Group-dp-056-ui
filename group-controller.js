@@ -1,42 +1,18 @@
-function GroupController () {
-
-    var group = new Group();
-    
-    studentsInit();
-    
-	function studentsInit () {
-		var aleks = new Person(),
-	        anton = new Person(),
-		    illya = new Person(), 
-		    ira = new Person(), 
-		    natasha = new Person(),
-			
-			students = [aleks, anton, illya, ira, natasha];
-			
-        aleks.setAttributes("Aleks", "male", "cosmopeon");
-	    anton.setAttributes("Anton", "male", "plewakofff");
-	    illya.setAttributes("Illya", "male", "ilyaillich");
-	    ira.setAttributes("Ira", "female", "aphrodite_i");
-	    natasha.setAttributes("Natasha", "female", "lisentia_dp");
-
-	    group.addStudent(students);
-	  				
-		showStudents(students);		
-	} 	
-	 
-    function showStudents(students) {
+var GroupController = Backbone.View.extend({
 	
-	    var $el = $(".list");
+	collection: new Group(),
 	
-		$.each(students, function(i, el){
+    initialize: function () {
+		this.render();	
+	},
+	
+	render: function () {
+		this.collection.each(this.renderOne, this);
+	},
+	
+	renderOne: function (person) {
+	    var  person_controller = new PersonController({model: person});
 		
-		    var  person_controller;
-			
-		    person_controller = new PersonController(el),
-			
-		    $el.append(person_controller.toString()); 	
-		});	
+		this.$el.append(person_controller.render());
 	}
-
-	return this;
-}
+});
