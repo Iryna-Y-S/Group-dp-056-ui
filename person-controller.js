@@ -4,5 +4,5 @@ var PersonController = Backbone.View.extend({
 
     render: function () {
 	    return this.template(this.model.toJSON());
-	}	
+	}
 });

@@ -13,6 +13,6 @@ var GroupController = Backbone.View.extend({
 	renderOne: function (person) {
 	    var  person_controller = new PersonController({model: person});
 		
-		this.$el.append(person_controller.render());
-	}
+		this.$el.append(person_controller.render());	
+	} 
 });
